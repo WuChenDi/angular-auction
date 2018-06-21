@@ -5,11 +5,37 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
+
+export class Product {
+  constructor(
+    public id: number,
+    public title: string,
+    public price: number,
+    public rating: number,
+    public desc: string,
+    public categories: Array<string>
+  ) {
+
+  }
+}
+
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  public products: Array<Product>;
+
+  constructor() {
+
+  }
 
   ngOnInit() {
+    this.products = [
+      new Product(1, '第一个商品', 899, 3.5, '这是一台电脑', ['电子产品', '家电']),
+      new Product(2, '第二个商品', 899, 3.5, '这是一台电脑', ['电子产品', '家电']),
+      new Product(3, '第三个商品', 899, 3.5, '这是一台电脑', ['电子产品', '家电']),
+      new Product(4, '第四个商品', 899, 3.5, '这是一台电脑', ['电子产品', '家电']),
+      new Product(5, '第五个商品', 899, 3.5, '这是一台电脑', ['电子产品', '家电']),
+      new Product(6, '第六个商品', 899, 3.5, '这是一台电脑', ['电子产品', '家电'])
+    ]
   }
 
 }
